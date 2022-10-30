@@ -13,6 +13,7 @@
 		FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C29172909926700F82303 /* TableViewViewModel.swift */; };
 		FA9C294C290A808A00F82303 /* MyProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C294A290A808A00F82303 /* MyProductsViewController.swift */; };
 		FA9C294D290A808A00F82303 /* MyProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9C294B290A808A00F82303 /* MyProductsViewController.xib */; };
+		FA9C2951290C1BE300F82303 /* DenemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C2950290C1BE300F82303 /* DenemeModel.swift */; };
 		FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4329098D8800C3E420 /* AppDelegate.swift */; };
 		FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */; };
 		FAF0BC4B29098D8800C3E420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0BC4929098D8800C3E420 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		FA9C29172909926700F82303 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 		FA9C294A290A808A00F82303 /* MyProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewController.swift; sourceTree = "<group>"; };
 		FA9C294B290A808A00F82303 /* MyProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductsViewController.xib; sourceTree = "<group>"; };
+		FA9C2950290C1BE300F82303 /* DenemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenemeModel.swift; sourceTree = "<group>"; };
 		FAF0BC4029098D8800C3E420 /* Vender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF0BC4329098D8800C3E420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,23 @@
 		FA9C29192909929300F82303 /* NewProduct */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = NewProduct;
+			sourceTree = "<group>";
+		};
+		FA9C294E290A9D6800F82303 /* MyProduct */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C294A290A808A00F82303 /* MyProductsViewController.swift */,
+				FA9C294B290A808A00F82303 /* MyProductsViewController.xib */,
+			);
+			path = MyProduct;
+			sourceTree = "<group>";
+		};
+		FA9C294F290A9D7600F82303 /* NewProduct */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0BC7D29098EDB00C3E420 /* NewProductViewController.swift */,
 			);
 			path = NewProduct;
 			sourceTree = "<group>";
@@ -174,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9C29132909917B00F82303 /* PostModel.swift */,
+				FA9C2950290C1BE300F82303 /* DenemeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,9 +240,8 @@
 		FAF0BC7C29098E2700C3E420 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF0BC7D29098EDB00C3E420 /* NewProductViewController.swift */,
-				FA9C294A290A808A00F82303 /* MyProductsViewController.swift */,
-				FA9C294B290A808A00F82303 /* MyProductsViewController.xib */,
+				FA9C294F290A9D7600F82303 /* NewProduct */,
+				FA9C294E290A9D6800F82303 /* MyProduct */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +391,7 @@
 				FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */,
 				FAF0BC7E29098EDB00C3E420 /* NewProductViewController.swift in Sources */,
 				FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */,
+				FA9C2951290C1BE300F82303 /* DenemeModel.swift in Sources */,
 				FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

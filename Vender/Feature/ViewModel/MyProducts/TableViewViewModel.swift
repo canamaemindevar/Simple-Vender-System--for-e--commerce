@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 protocol tableViewProtocol{
-    func updateTable(items: [PostModel])
+    func updateTable(items: ModelElementArray)
 }
-protocol tableViewOutput: class{
+protocol tableViewOutput: AnyObject{
     func onSelected(item:PostModel)
 }
 
 final class TableViewVM: NSObject{
     
    
-    private lazy var items: [PostModel] = []
+    private lazy var items: [ModelElement] = []
     
    weak var delegate: tableViewOutput?
 
@@ -29,12 +29,12 @@ final class TableViewVM: NSObject{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = UITableViewCell()
         
-        cell.textLabel?.text =  items[indexPath.row].title
-        cell.detailTextLabel?.text =  items[indexPath.row].body
+        cell.textLabel?.text =  "\(items[indexPath.row].name!):   \(items[indexPath.row].price!)"
+     //  cell.detailTextLabel?.text =  items[indexPath.row].name
                 return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.onSelected(item: items[indexPath.row])
+     //   delegate?.onSelected(item: items[indexPath.row])
     }
 }
 
@@ -42,11 +42,14 @@ final class TableViewVM: NSObject{
 extension TableViewVM:UITableViewDelegate,UITableViewDataSource{}
 
 extension TableViewVM: tableViewProtocol{
-    func updateTable(items: [PostModel]) {
-        self.items = items
-    }
-    
+    func updateTable(items: ModelElementArray) {
+        items.forEach { _,result in
+            self.items.append(.init(name: result.name, price: result.price))
+        }
+       
+        
     
 }
 
 
+}

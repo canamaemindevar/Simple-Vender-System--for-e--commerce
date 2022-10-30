@@ -14,6 +14,10 @@ final class NewProductViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .yellow
+        let name = "armut"
+        let price = 5
+        let newProduct = ModelElement(name: name, price: price)
+        NewProductManagerService.shared.sendingNewProduct(product: newProduct)
     }
     
 
