@@ -18,21 +18,19 @@ protocol NewProductManagerProtocol{
 }
 
 enum UrlPath: String {
-   case POSTS = "users"
-   // case POSTS = "/posts"
+   case USERS = "users"
 }
 
 extension UrlPath {
 
     func withBaseUrl() -> String {
         return "https://denemerest-52901-default-rtdb.firebaseio.com/\(self.rawValue).json"
-      //  return "https://jsonplaceholder.typicode.com\(self.rawValue)"
     }
 }
 
 struct ProductManagerService: ProductManagerProtocol {
     func fethAllPosts(onSuccess: @escaping (ModelElementArray) -> Void, onFail: @escaping (String?) -> Void) {
-        AF.request(UrlPath.POSTS.withBaseUrl(), method: .get).validate().responseDecodable(of: ModelElementArray.self) { (response) in
+        AF.request(UrlPath.USERS.withBaseUrl(), method: .get).validate().responseDecodable(of: ModelElementArray.self) { (response) in
             guard let items = response.value else {
                 onFail(response.debugDescription)
                 return
@@ -48,7 +46,7 @@ struct NewProductManagerService: NewProductManagerProtocol{
         let headers: HTTPHeaders = [
             .contentType("application/json; charset=utf-8")
         ]
-        AF.request(UrlPath.POSTS.withBaseUrl(),
+        AF.request(UrlPath.USERS.withBaseUrl(),
                    method: .post, parameters: product,
                    encoder: JSONParameterEncoder.default,
                    headers: headers).response{ response in

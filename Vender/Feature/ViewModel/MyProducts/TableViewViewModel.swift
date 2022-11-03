@@ -12,13 +12,13 @@ protocol tableViewProtocol{
     func updateTable(items: ModelElementArray)
 }
 protocol tableViewOutput: AnyObject{
-    func onSelected(item:PostModel)
+    func onSelected(item:ModelElementArray)
 }
 
 final class TableViewVM: NSObject{
     
    
-    private lazy var items: [ModelElement] = []
+   private lazy var items: [ModelElement] = []
     
    weak var delegate: tableViewOutput?
 
@@ -29,13 +29,10 @@ final class TableViewVM: NSObject{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = UITableViewCell()
         
-        cell.textLabel?.text =  "\(items[indexPath.row].name!):   \(items[indexPath.row].price!)"
-     //  cell.detailTextLabel?.text =  items[indexPath.row].name
+        cell.textLabel?.text =  "\(items[indexPath.row].name!):   \(items[indexPath.row].price!)$ "
                 return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     //   delegate?.onSelected(item: items[indexPath.row])
-    }
+    
 }
 
 

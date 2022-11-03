@@ -9,6 +9,7 @@ import UIKit
 
 class MyProductsViewController: UIViewController {
 
+    @IBOutlet weak var myView: UIView!
     private var tableViewVM: TableViewVM = TableViewVM()
     private var service: ProductManagerService = ProductManagerService()
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -27,6 +28,9 @@ class MyProductsViewController: UIViewController {
         tableViewOutlet.delegate = tableViewVM
         tableViewOutlet.dataSource = tableViewVM
         tableViewVM.delegate = self
+        title = "My Products"
+        myView.backgroundColor = .black
+        myView.layer.cornerRadius = 100
         
     }
     private func initService() {
@@ -42,8 +46,8 @@ class MyProductsViewController: UIViewController {
 }
 
 extension MyProductsViewController:tableViewOutput{
-    func onSelected(item: PostModel) {
-        print(item.body )
+    func onSelected(item: ModelElementArray) {
+      //  print(item.body )
     }
     
     

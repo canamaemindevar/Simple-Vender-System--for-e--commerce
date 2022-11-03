@@ -12,13 +12,3 @@ struct ModelElement: Codable {
 }
 
 typealias ModelElementArray = [String: ModelElement]
-
-
-
-
-// struct ModelElement: Codable {
-//     let name: String?
-//     let price: Int?
-//
-// }
- 

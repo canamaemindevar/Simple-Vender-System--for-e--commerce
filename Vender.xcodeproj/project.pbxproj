@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		FA9C290F290990A600F82303 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C290E290990A600F82303 /* NetworkManager.swift */; };
 		FA9C29122909914E00F82303 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA9C29112909914E00F82303 /* Alamofire */; };
-		FA9C29142909917B00F82303 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C29132909917B00F82303 /* PostModel.swift */; };
 		FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C29172909926700F82303 /* TableViewViewModel.swift */; };
 		FA9C294C290A808A00F82303 /* MyProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C294A290A808A00F82303 /* MyProductsViewController.swift */; };
 		FA9C294D290A808A00F82303 /* MyProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9C294B290A808A00F82303 /* MyProductsViewController.xib */; };
 		FA9C2951290C1BE300F82303 /* DenemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C2950290C1BE300F82303 /* DenemeModel.swift */; };
+		FA9C29912911453500F82303 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA9C29902911453500F82303 /* SnapKit */; };
 		FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4329098D8800C3E420 /* AppDelegate.swift */; };
 		FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */; };
 		FAF0BC4B29098D8800C3E420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0BC4929098D8800C3E420 /* Main.storyboard */; };
@@ -45,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		FA9C290E290990A600F82303 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		FA9C29132909917B00F82303 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		FA9C29172909926700F82303 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 		FA9C294A290A808A00F82303 /* MyProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewController.swift; sourceTree = "<group>"; };
 		FA9C294B290A808A00F82303 /* MyProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductsViewController.xib; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9C29122909914E00F82303 /* Alamofire in Frameworks */,
+				FA9C29912911453500F82303 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,6 @@
 		FAF0BC7529098DA700C3E420 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA9C29132909917B00F82303 /* PostModel.swift */,
 				FA9C2950290C1BE300F82303 /* DenemeModel.swift */,
 			);
 			path = Model;
@@ -264,6 +263,7 @@
 			name = Vender;
 			packageProductDependencies = (
 				FA9C29112909914E00F82303 /* Alamofire */,
+				FA9C29902911453500F82303 /* SnapKit */,
 			);
 			productName = Vender;
 			productReference = FAF0BC4029098D8800C3E420 /* Vender.app */;
@@ -339,6 +339,7 @@
 			mainGroup = FAF0BC3729098D8800C3E420;
 			packageReferences = (
 				FA9C29102909914E00F82303 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FA9C298F2911453500F82303 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FAF0BC4129098D8800C3E420 /* Products */;
 			projectDirPath = "";
@@ -384,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9C29142909917B00F82303 /* PostModel.swift in Sources */,
 				FAF0BC7A29098E0500C3E420 /* MainTabbar.swift in Sources */,
 				FA9C294C290A808A00F82303 /* MyProductsViewController.swift in Sources */,
 				FA9C290F290990A600F82303 /* NetworkManager.swift in Sources */,
@@ -744,6 +744,14 @@
 				kind = branch;
 			};
 		};
+		FA9C298F2911453500F82303 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -751,6 +759,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA9C29102909914E00F82303 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FA9C29902911453500F82303 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA9C298F2911453500F82303 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
