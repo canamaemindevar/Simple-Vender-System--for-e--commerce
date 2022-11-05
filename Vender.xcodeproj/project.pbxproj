@@ -11,9 +11,9 @@
 		FA9C29122909914E00F82303 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA9C29112909914E00F82303 /* Alamofire */; };
 		FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C29172909926700F82303 /* TableViewViewModel.swift */; };
 		FA9C294C290A808A00F82303 /* MyProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C294A290A808A00F82303 /* MyProductsViewController.swift */; };
-		FA9C294D290A808A00F82303 /* MyProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9C294B290A808A00F82303 /* MyProductsViewController.xib */; };
-		FA9C2951290C1BE300F82303 /* DenemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C2950290C1BE300F82303 /* DenemeModel.swift */; };
+		FA9C2951290C1BE300F82303 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C2950290C1BE300F82303 /* ProductModel.swift */; };
 		FA9C29912911453500F82303 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA9C29902911453500F82303 /* SnapKit */; };
+		FA9C299629168F7800F82303 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C299529168F7800F82303 /* ProductCell.swift */; };
 		FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4329098D8800C3E420 /* AppDelegate.swift */; };
 		FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */; };
 		FAF0BC4B29098D8800C3E420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0BC4929098D8800C3E420 /* Main.storyboard */; };
@@ -47,8 +47,8 @@
 		FA9C290E290990A600F82303 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA9C29172909926700F82303 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 		FA9C294A290A808A00F82303 /* MyProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewController.swift; sourceTree = "<group>"; };
-		FA9C294B290A808A00F82303 /* MyProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductsViewController.xib; sourceTree = "<group>"; };
-		FA9C2950290C1BE300F82303 /* DenemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenemeModel.swift; sourceTree = "<group>"; };
+		FA9C2950290C1BE300F82303 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		FA9C299529168F7800F82303 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		FAF0BC4029098D8800C3E420 /* Vender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF0BC4329098D8800C3E420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				FA9C294A290A808A00F82303 /* MyProductsViewController.swift */,
-				FA9C294B290A808A00F82303 /* MyProductsViewController.xib */,
 			);
 			path = MyProduct;
 			sourceTree = "<group>";
@@ -122,6 +121,22 @@
 				FAF0BC7D29098EDB00C3E420 /* NewProductViewController.swift */,
 			);
 			path = NewProduct;
+			sourceTree = "<group>";
+		};
+		FA9C299429168F5E00F82303 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C299529168F7800F82303 /* ProductCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA9C299729169AAA00F82303 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C299429168F5E00F82303 /* Cell */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		FAF0BC3729098D8800C3E420 = {
@@ -174,7 +189,8 @@
 		FAF0BC7329098D9300C3E420 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FAF0BC7C29098E2700C3E420 /* Views */,
+				FA9C299729169AAA00F82303 /* Subviews */,
+				FAF0BC7C29098E2700C3E420 /* Scenes */,
 				FAF0BC7B29098E0E00C3E420 /* Tabbar */,
 			);
 			path = View;
@@ -192,7 +208,7 @@
 		FAF0BC7529098DA700C3E420 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA9C2950290C1BE300F82303 /* DenemeModel.swift */,
+				FA9C2950290C1BE300F82303 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,13 +252,13 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		FAF0BC7C29098E2700C3E420 /* Views */ = {
+		FAF0BC7C29098E2700C3E420 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				FA9C294F290A9D7600F82303 /* NewProduct */,
 				FA9C294E290A9D6800F82303 /* MyProduct */,
 			);
-			path = Views;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +375,6 @@
 			files = (
 				FAF0BC5029098D8B00C3E420 /* LaunchScreen.storyboard in Resources */,
 				FAF0BC4D29098D8B00C3E420 /* Assets.xcassets in Resources */,
-				FA9C294D290A808A00F82303 /* MyProductsViewController.xib in Resources */,
 				FAF0BC4B29098D8800C3E420 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +406,8 @@
 				FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */,
 				FAF0BC7E29098EDB00C3E420 /* NewProductViewController.swift in Sources */,
 				FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */,
-				FA9C2951290C1BE300F82303 /* DenemeModel.swift in Sources */,
+				FA9C299629168F7800F82303 /* ProductCell.swift in Sources */,
+				FA9C2951290C1BE300F82303 /* ProductModel.swift in Sources */,
 				FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

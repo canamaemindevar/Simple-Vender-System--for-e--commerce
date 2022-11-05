@@ -42,7 +42,7 @@ final class NewProductViewController: UIViewController {
         super.viewDidLoad()
         
         title = "New Product"
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         addSubviews()
         makeConstraits()
         

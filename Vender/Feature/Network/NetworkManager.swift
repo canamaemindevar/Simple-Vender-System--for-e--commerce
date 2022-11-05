@@ -8,6 +8,7 @@
 
 import Alamofire
 import Foundation
+import Combine
 
 
 protocol ProductManagerProtocol {
@@ -28,17 +29,7 @@ extension UrlPath {
     }
 }
 
-struct ProductManagerService: ProductManagerProtocol {
-    func fethAllPosts(onSuccess: @escaping (ModelElementArray) -> Void, onFail: @escaping (String?) -> Void) {
-        AF.request(UrlPath.USERS.withBaseUrl(), method: .get).validate().responseDecodable(of: ModelElementArray.self) { (response) in
-            guard let items = response.value else {
-                onFail(response.debugDescription)
-                return
-            }
-            onSuccess(items)
-        }
-    }
-}
+//MARK: Post Product
 
 struct NewProductManagerService: NewProductManagerProtocol{
     static let shared = NewProductManagerService()
@@ -53,8 +44,22 @@ struct NewProductManagerService: NewProductManagerProtocol{
             debugPrint(response)
         }
     }
-    
-    
 }
+
+//MARK: Get Product
+
+struct ProductManagerService: ProductManagerProtocol {
+    func fethAllPosts(onSuccess: @escaping (ModelElementArray) -> Void, onFail: @escaping (String?) -> Void) {
+        AF.request(UrlPath.USERS.withBaseUrl(), method: .get).validate().responseDecodable(of: ModelElementArray.self) { (response) in
+            guard let items = response.value else {
+                onFail(response.debugDescription)
+                return
+            }
+            onSuccess(items)
+        }
+    }
+}
+
+
 
 
