@@ -1,4 +1,4 @@
-# Simple-Vender-System--for-e--commerce
+# Simple Vender System for e-commerce
 - Programaticly developed with SnapKit.
 - Written with Protocol Oriented development.
 - Written with MVVM architecture.
