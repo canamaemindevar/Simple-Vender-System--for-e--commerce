@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA97CDD12969E91000081C94 /* TableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDD02969E91000081C94 /* TableViewVM.swift */; };
+		FA97CDD62969ECF700081C94 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDD52969ECF700081C94 /* OnboardingContainerViewController.swift */; };
+		FA97CDD82969ED2200081C94 /* OnboardingViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDD72969ED2200081C94 /* OnboardingViewCotroller.swift */; };
+		FA97CDDB2969F09D00081C94 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDDA2969F09C00081C94 /* Login.swift */; };
+		FA97CDDE2969F0C700081C94 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FA97CDDD2969F0C700081C94 /* RxCocoa */; };
+		FA97CDE02969F0C700081C94 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA97CDDF2969F0C700081C94 /* RxSwift */; };
+		FA97CDE32969F56200081C94 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDE22969F56200081C94 /* LoginViewModel.swift */; };
+		FA97CDE52969FDAF00081C94 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97CDE42969FDAF00081C94 /* LocalState.swift */; };
 		FA9C290F290990A600F82303 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C290E290990A600F82303 /* NetworkManager.swift */; };
 		FA9C29122909914E00F82303 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA9C29112909914E00F82303 /* Alamofire */; };
 		FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C29172909926700F82303 /* TableViewViewModel.swift */; };
@@ -44,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA97CDD02969E91000081C94 /* TableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVM.swift; sourceTree = "<group>"; };
+		FA97CDD52969ECF700081C94 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		FA97CDD72969ED2200081C94 /* OnboardingViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewCotroller.swift; sourceTree = "<group>"; };
+		FA97CDDA2969F09C00081C94 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FA97CDE22969F56200081C94 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FA97CDE42969FDAF00081C94 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		FA9C290E290990A600F82303 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA9C29172909926700F82303 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 		FA9C294A290A808A00F82303 /* MyProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA97CDDE2969F0C700081C94 /* RxCocoa in Frameworks */,
 				FA9C29122909914E00F82303 /* Alamofire in Frameworks */,
+				FA97CDE02969F0C700081C94 /* RxSwift in Frameworks */,
 				FA9C29912911453500F82303 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +108,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA97CDCF2969E90100081C94 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FA97CDD02969E91000081C94 /* TableViewVM.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		FA97CDD22969EC9500081C94 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0BC5129098D8B00C3E420 /* Info.plist */,
+				FAF0BC4329098D8800C3E420 /* AppDelegate.swift */,
+				FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */,
+				FAF0BC4929098D8800C3E420 /* Main.storyboard */,
+				FAF0BC4C29098D8B00C3E420 /* Assets.xcassets */,
+				FAF0BC4E29098D8B00C3E420 /* LaunchScreen.storyboard */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		FA97CDD32969ECCC00081C94 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FA97CDD52969ECF700081C94 /* OnboardingContainerViewController.swift */,
+				FA97CDD72969ED2200081C94 /* OnboardingViewCotroller.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FA97CDD92969F08D00081C94 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FA97CDDA2969F09C00081C94 /* Login.swift */,
+				FA97CDE22969F56200081C94 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		FA9C29152909923C00F82303 /* MyProducts */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +217,7 @@
 		FAF0BC4229098D8800C3E420 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				FAF0BC5129098D8B00C3E420 /* Info.plist */,
-				FAF0BC7729098DC700C3E420 /* Core */,
+				FA97CDD22969EC9500081C94 /* Core */,
 				FAF0BC7829098DD700C3E420 /* Feature */,
 			);
 			path = Vender;
@@ -199,6 +253,7 @@
 		FAF0BC7429098DA100C3E420 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA97CDCF2969E90100081C94 /* Subviews */,
 				FA9C29192909929300F82303 /* NewProduct */,
 				FA9C29152909923C00F82303 /* MyProducts */,
 			);
@@ -221,25 +276,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FAF0BC7729098DC700C3E420 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				FAF0BC4329098D8800C3E420 /* AppDelegate.swift */,
-				FAF0BC4529098D8800C3E420 /* SceneDelegate.swift */,
-				FAF0BC4929098D8800C3E420 /* Main.storyboard */,
-				FAF0BC4C29098D8B00C3E420 /* Assets.xcassets */,
-				FAF0BC4E29098D8B00C3E420 /* LaunchScreen.storyboard */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		FAF0BC7829098DD700C3E420 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				FA97CDD92969F08D00081C94 /* Login */,
+				FA97CDD32969ECCC00081C94 /* Onboarding */,
 				FAF0BC7629098DBD00C3E420 /* Network */,
 				FAF0BC7529098DA700C3E420 /* Model */,
 				FAF0BC7429098DA100C3E420 /* ViewModel */,
 				FAF0BC7329098D9300C3E420 /* View */,
+				FA97CDE42969FDAF00081C94 /* LocalState.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -280,6 +326,8 @@
 			packageProductDependencies = (
 				FA9C29112909914E00F82303 /* Alamofire */,
 				FA9C29902911453500F82303 /* SnapKit */,
+				FA97CDDD2969F0C700081C94 /* RxCocoa */,
+				FA97CDDF2969F0C700081C94 /* RxSwift */,
 			);
 			productName = Vender;
 			productReference = FAF0BC4029098D8800C3E420 /* Vender.app */;
@@ -356,6 +404,7 @@
 			packageReferences = (
 				FA9C29102909914E00F82303 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FA9C298F2911453500F82303 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA97CDDC2969F0C700081C94 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = FAF0BC4129098D8800C3E420 /* Products */;
 			projectDirPath = "";
@@ -401,13 +450,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF0BC7A29098E0500C3E420 /* MainTabbar.swift in Sources */,
+				FA97CDE52969FDAF00081C94 /* LocalState.swift in Sources */,
 				FA9C294C290A808A00F82303 /* MyProductsViewController.swift in Sources */,
+				FA97CDDB2969F09D00081C94 /* Login.swift in Sources */,
 				FA9C290F290990A600F82303 /* NetworkManager.swift in Sources */,
 				FAF0BC4429098D8800C3E420 /* AppDelegate.swift in Sources */,
+				FA97CDD82969ED2200081C94 /* OnboardingViewCotroller.swift in Sources */,
+				FA97CDE32969F56200081C94 /* LoginViewModel.swift in Sources */,
 				FAF0BC7E29098EDB00C3E420 /* NewProductViewController.swift in Sources */,
 				FA9C29182909926700F82303 /* TableViewViewModel.swift in Sources */,
+				FA97CDD12969E91000081C94 /* TableViewVM.swift in Sources */,
 				FA9C299629168F7800F82303 /* ProductCell.swift in Sources */,
 				FA9C2951290C1BE300F82303 /* ProductModel.swift in Sources */,
+				FA97CDD62969ECF700081C94 /* OnboardingContainerViewController.swift in Sources */,
 				FAF0BC4629098D8800C3E420 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +807,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA97CDDC2969F0C700081C94 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FA9C29102909914E00F82303 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -771,6 +834,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA97CDDD2969F0C700081C94 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA97CDDC2969F0C700081C94 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FA97CDDF2969F0C700081C94 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA97CDDC2969F0C700081C94 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		FA9C29112909914E00F82303 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA9C29102909914E00F82303 /* XCRemoteSwiftPackageReference "Alamofire" */;

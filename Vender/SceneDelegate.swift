@@ -11,7 +11,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    let loginVC = LoginViewController()
+    let tabbarVC = TabbarViewController()
+    let onboardingVC = OnboardingContainerViewController()
+    
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -19,8 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = TabbarViewController()
+        window?.rootViewController = onboardingVC
+
         window?.makeKeyAndVisible()
+        
+        onboardingVC.delegate = self
+        loginVC.delagate = self
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,3 +64,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        LocalState.hasOnboarded = true
+        print("foo - close delegate works")
+        // loginle değiştir
+        setRootViewController(loginVC)
+    }
+}
+
+extension SceneDelegate: LoginSuccesfullInterface {
+    func routeToTabbar() {
+        setRootViewController(tabbarVC)
+    }
+    
+    
+}
+
+extension SceneDelegate {
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window,
+                          duration: 0.7,
+                          options: .transitionCrossDissolve,
+                          animations: nil)
+    }
+}

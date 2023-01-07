@@ -8,10 +8,16 @@
 import UIKit
 import SnapKit
 
+
+protocol MyProductsViewInterface: AnyObject {
+    func prepareForTableView()
+}
+
 final class MyProductsViewController: UIViewController {
 
    
-    private var tableViewVM: TableViewVM = TableViewVM()
+    private lazy var tableViewVM: TableViewVM = TableViewVM()
+    private lazy var viewModel = MyProductsViewModel()
     private var service: ProductManagerService = ProductManagerService()
     
     private let tableViewOutlet: UITableView = {
@@ -41,11 +47,10 @@ final class MyProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubViews()
-        makeContraits()
-        setUp()
-        initService()
-        view.backgroundColor = .orange 
+        viewModel.view = self
+        viewModel.viewDidLoad()
+        // view modele taşı
+   
     }
     override class func awakeFromNib() {
         //
@@ -101,7 +106,7 @@ extension MyProductsViewController {
             make.top.equalTo(0)
             make.left.equalTo(10)
             make.right.equalTo(-10)
-            make.height.equalTo(view).dividedBy(2)
+            make.height.equalTo(view).multipliedBy(0.4)
         }
     }
     private func makeMytableView() {
@@ -110,15 +115,15 @@ extension MyProductsViewController {
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
-            make.height.equalTo(myView)
+            make.height.equalTo(view).multipliedBy(0.6)
         }
     }
     private func makeMyProfileView() {
         profileView.snp.makeConstraints { make in
             make.top.equalTo(100)
             make.left.equalTo(100)
-            make.height.equalTo(myView).dividedBy(2)
-            make.width.equalTo(myView).dividedBy(2)
+            make.height.equalTo(myView).multipliedBy(0.5)
+            
             
         }
     }
@@ -130,4 +135,17 @@ extension MyProductsViewController {
             make.right.equalTo(profileView.snp.right)
         }
     }
+}
+
+
+extension MyProductsViewController: MyProductsViewInterface {
+    func prepareForTableView() {
+        addSubViews()
+        makeContraits()
+        setUp()
+        initService()
+        view.backgroundColor = .orange 
+    }
+    
+    
 }
